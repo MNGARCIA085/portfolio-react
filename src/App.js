@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap";
+import React, { useState, useEffect } from "react";
+
+/**
+import Search from "./components/Search/Search";
+import Card from "./components/Card/Card";
+import Pagination from "./components/Pagination/Pagination";
+import Filter from "./components/Filter/Filter";
+import Navbar from "./components/Navbar/Navbar";
+*/
+
+
+
+
+import Navbar from "./components/Navbar/Navbar";
+
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Courses from "./Pages/Courses";
+import CV from "./Pages/CV";
+import Articles from "./Pages/Articles";
+import CourseDetail from "./components/Course/CourseDetail";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        
+
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/courses/:id" element={<CourseDetail />} />
+
+
+        <Route path="/cv" element={<CV />} />
+
+        <Route path="/articles" element={<Articles />} />
+
+
+
+      </Routes>
+    </Router>
   );
 }
+
+const Home = () => {
+  return (
+    <div className="App">
+      This is my home page
+    </div>
+  );
+};
 
 export default App;
