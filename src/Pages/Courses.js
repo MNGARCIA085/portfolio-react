@@ -1,25 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from "react-router-dom";
+import SearchBar from '../components/SearchBar';
 
 const Courses = () => {
+
+    // results: setResults... con useState; para los filtros
   
     const results = [
         {
-        'id':1,
-        'name':'Angular: from 0 to expert',
-        'tuthor':'dsfs',
+            'id':1,
+            'name':'Angular: from 0 to expert',
+            'tuthor':'dsfs',
         },
         {
-        'id':2,
-        'name':'dsfds',
-        'tuthor':'dsf',
+            'id':2,
+            'name':'dsfds',
+            'tuthor':'dsf',
         },
         {
-        'id':3,
-        'name':'dsfdsmnb',
-        'tuthor':'dsf',
+            'id':3,
+            'name':'dsfdsmnb',
+            'tuthor':'dsf',
         }
     ]
+
+
 
     const renderedResults = results.map((result) => {
         return (   
@@ -40,10 +45,7 @@ const Courses = () => {
                             className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark"
                             >
                                 Details
-                        </Link>
-
-
-                            
+                        </Link>     
                         </div>
                 </div>
         );
@@ -52,6 +54,10 @@ const Courses = () => {
 
     return (
         <div>
+
+
+            <SearchBar/>
+
             <b>MY COURSES</b>
             <div class="ui cards">
                 {renderedResults}

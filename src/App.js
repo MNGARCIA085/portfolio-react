@@ -25,6 +25,8 @@ import CourseDetail from "./components/Course/CourseDetail";
 
 
 function App() {
+
+  
   return (
     <Router>
       <div className="App">
