@@ -2,12 +2,6 @@ import React, {useState} from 'react';
 
 const SearchBar = () => {
 
-    const [searchInput, setSearchInput] = useState("");
-
-
-    const [display, setDisplay] = useState([{'id':7}]);
-
-
     const countries = [
         { name: "Belgium", continent: "Europe" },
         { name: "India", continent: "Asia" },
@@ -16,27 +10,25 @@ const SearchBar = () => {
     ];
 
 
+    const [searchInput, setSearchInput] = useState("");
+    const [display, setDisplay] = useState(countries);
+
+
+    
+
     const handleChange = (e) => {
             e.preventDefault();
             setSearchInput(e.target.value);
-
-
         if (searchInput.length > 0) {
             countries.filter((country) => {
                 return country.name.match(searchInput);
         });
-
         const aux = countries.filter((country) => {return country.name.match(searchInput);});
         console.log(aux);
-
         setDisplay(aux);
-
-
         //setDisplay([{'id':3},{'id':14}]);
         console.log(display);
-
       }
-
     };
         
 
@@ -74,7 +66,7 @@ const SearchBar = () => {
 
             {renderedResults}
             
-
+            <hr></hr>
             {renderedDisplay}
 
 

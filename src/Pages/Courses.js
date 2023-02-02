@@ -4,36 +4,62 @@ import SearchBar from '../components/SearchBar';
 
 const Courses = () => {
 
-    // results: setResults... con useState; para los filtros
   
     const results = [
         {
             'id':1,
-            'name':'Angular: from 0 to expert',
+            'name':'angular',
             'tuthor':'dsfs',
         },
         {
             'id':2,
-            'name':'dsfds',
+            'name':'react',
             'tuthor':'dsf',
         },
         {
             'id':3,
-            'name':'dsfdsmnb',
+            'name':'node',
+            'tuthor':'dsf',
+        },
+        {
+            'id':4,
+            'name':'deep learning dflgjfdgfd gdflgjfdǵjṕfdgjkṕdfgjfjp',
+            'tuthor':'dsf',
+        },
+        {
+            'id':5,
+            'name':'react native',
             'tuthor':'dsf',
         }
     ]
 
 
+    const [searchInput, setSearchInput] = useState("");
+    const [display, setDisplay] = useState(results);
 
-    const renderedResults = results.map((result) => {
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        setSearchInput(e.target.value); // lo act. mal; 1 paso dsp.
+        if (e.target.value.length > 0) {
+            const aux = results.filter(result => result.name.includes(e.target.value));
+            setDisplay(aux);
+        }
+        else{
+            setDisplay(results);
+        }
+    };
+
+
+
+    const renderedDisplay = display.map((result) => {
         return (   
                 <div class="card" key={result.name}>
                         <div class="content">
-                        <div class="header">{result.name}</div>
-                        <div class="description">
-                            {result.tuthor}
-                        </div>
+                            <div class="header"><center>{result.name}</center></div>
+                            <div class="description">
+                               {result.tuthor}
+                            </div>
                         </div>
                         <div class="ui bottom attached button">
                         <i class="add icon"></i>
@@ -52,16 +78,42 @@ const Courses = () => {
     });
 
 
+
+    //  <SearchBar/> debajo del return
+
     return (
         <div>
-
-
-            <SearchBar/>
-
-            <b>MY COURSES</b>
-            <div class="ui cards">
-                {renderedResults}
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <b><center><h2><font color='red'>MY COURSES</font></h2></center></b>
+                    <hr></hr>
+                </div>
             </div>
+
+
+            <div class="row">
+                <div class="col-md-2 offset-md-8">
+                    <input
+                        type="text"
+                        placeholder="Search title"
+                        onChange={handleChange}
+                        value={searchInput} />
+                </div>
+            </div>
+
+            <br></br><br></br>
+
+            <div class="row">
+                <div class="col-md-10 offset-md-2">
+                    <div class="ui cards">
+                        {renderedDisplay}
+                    </div>
+                </div>
+            </div>
+
+        
+
     </div>
   );
 };
