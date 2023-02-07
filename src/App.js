@@ -21,7 +21,7 @@ import Courses from "./Pages/Courses";
 import CV from "./Pages/CV";
 import Articles from "./Pages/Articles";
 import CourseDetail from "./components/Course/CourseDetail";
-
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -34,27 +34,22 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        
-
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:id" element={<CourseDetail />} />
-
-
         <Route path="/cv" element={<CV />} />
-
         <Route path="/articles" element={<Articles />} />
-
-
-
       </Routes>
     </Router>
   );
+
+
 }
 
 const Home = () => {
   return (
     <div className="App">
       This is my home page
+      <Footer/>
     </div>
   );
 };
