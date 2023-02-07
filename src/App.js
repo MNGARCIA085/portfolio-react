@@ -39,6 +39,7 @@ function App() {
         <Route path="/cv" element={<CV />} />
         <Route path="/articles" element={<Articles />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 
@@ -49,7 +50,7 @@ const Home = () => {
   return (
     <div className="App">
       This is my home page
-      <Footer/>
+      <br></br>
     </div>
   );
 };

@@ -3,7 +3,7 @@ const CV = () => {
         <div class="container-fluid">
             <h1><center>CV</center></h1>
             <hr></hr>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-4 offset-md-3">
                         DATOS PERSONALES
@@ -12,6 +12,9 @@ const CV = () => {
                         <b>Fecha de Nacimiento:</b>  27/3/1985	<br></br>		  
                         <b>Teléfono: </b>	092541619 <br></br>				
                         <b>Email:</b>  mngarcia085@gmail.com 
+                   
+
+                        
                         <hr></hr>
                         FORMACIÓN ACADÉMICA
                         <hr></hr>
@@ -28,17 +31,27 @@ const CV = () => {
                             <li><b>Tareas Realizadas</b>: 
                                 <ul>
                                     <li>Desarrollo de software de gestión</li>
+                                    <li>Desarrollo de software de gestión</li>
+                                    <li>Desarrollo de software de gestión</li>
+                                    <li>Desarrollo de software de gestión</li>
+                                    <li>Desarrollo de software de gestión</li>
                                 </ul>
                             
                             </li>
+                            <li>sdfdsfsdf</li>
+                            <li>sdfdsfsdf</li>
                         </ul>
 
                     </div>
                    
-                    <div class="w-100"></div>
+                    
                     
                 </div>
-                </div>
+            </div>
+
+
+            <br></br><br></br><br></br>
+
         </div>
     )
 }
