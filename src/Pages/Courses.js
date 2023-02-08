@@ -1,47 +1,15 @@
 import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 import SearchBar from '../components/SearchBar';
+import data from '../data/coursesData';
+
 
 const Courses = () => {
 
   
-    const results = [
-        {
-            'id':1,
-            'image':'https://angular.io/assets/images/logos/angular/shield-large.svg',
-            'link':'https://www.udemy.com/course/angular-fernando-herrera/',
-            'name':'angular',
-            'tuthor':'Fernando Herrera',
-        },
-        {
-            'id':2,
-            'image':'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
-            'link':'https://www.udemy.com/course/react-redux/',
-            'name':'react',
-            'tuthor':'dsf',
-        },
-        {
-            'id':3,
-            'image':'https://angular.io/assets/images/logos/angular/shield-large.svg',
-            'link':'https://www.udemy.com/course/angular-fernando-herrera/',
-            'name':'node',
-            'tuthor':'dsf',
-        },
-        {
-            'id':4,
-            'image':'https://angular.io/assets/images/logos/angular/shield-large.svg',
-            'link':'https://www.udemy.com/course/angular-fernando-herrera/',
-            'name':'deep learning dflgjfdgfd gdflgjfdǵjṕfdgjkṕdfgjfjp',
-            'tuthor':'dsf',
-        },
-        {
-            'id':5,
-            'image':'https://angular.io/assets/images/logos/angular/shield-large.svg',
-            'link':'https://www.udemy.com/course/angular-fernando-herrera/',
-            'name':'react native',
-            'tuthor':'dsf',
-        }
-    ]
+    
+
+    const results = data;
 
 
     const [searchInput, setSearchInput] = useState("");
@@ -64,6 +32,9 @@ const Courses = () => {
 
     const renderedDisplay = display.map((result) => {
         return (   
+
+            
+
                 <div class="card" key={result.name}>
                         <div class="content">
                             <div class="header"><center>{result.name}</center><hr></hr></div>
@@ -73,26 +44,40 @@ const Courses = () => {
                                 <center> <img src={result.image} alt='Desc' width="100px" height="80px"></img> </center>  
                             </div>
                             
-                            
                             <div class="description">
                                 <br></br>
                                 <b>Tutor</b> : {result.tuthor} <br></br>
-                                <b>Link</b> :  <a href={result.link} target='_blanck'>Clic here</a>
+                                 <a href={result.link} target='_blanck' style={{ textDecoration: 'none' }}>Link</a>
                             </div>
-                        </div>
-                        <div class="ui bottom attached button">
-                        <i class="add icon"></i>
 
-                        <Link
-                            style={{ textDecoration: "none" }}
-                            to={`${result.id}`}
-                            key={result.id}
-                            className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark"
-                        >
-                                Details
-                        </Link>     
+
+
+                            <hr></hr>
+
+                            <center>
+                                <i class="add icon"  style={{color:'grey'}}></i>
+                                <Link
+                                    style={{ textDecoration: "none" }}
+                                    to={`${result.id}`}
+                                    key={result.id}
+                                    className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark">
+                                        Details
+                                </Link> 
+                            </center>
+
+                            
+                            
+
+
+
                         </div>
+                        
+                        
+                        
                 </div>
+
+
+
         );
     });
 
@@ -124,7 +109,7 @@ const Courses = () => {
             <br></br><br></br>
 
             <div class="row">
-                <div class="col-md-10 offset-md-2">
+                <div class="col-md-8 offset-md-2">
                     <div class="ui cards">
                         {renderedDisplay}
                     </div>

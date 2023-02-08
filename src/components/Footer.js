@@ -3,9 +3,10 @@ import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 
 const Footer = () => {
+    //fixed-bottom MDBFooter para que quede al final
     return (
         <div>
-            <MDBFooter bgColor='light' className='text-center text-lg-start text-muted fixed-bottom'>
+            <MDBFooter bgColor='light' className='text-center text-lg-start text-muted '> 
                 <div class="text-center p-4">
                                 <a href='mailto:mngarcia085@gmail.com' title="Send email" className='me-4 text-reset'>
                                         <MDBIcon fab icon="google text-danger" />
