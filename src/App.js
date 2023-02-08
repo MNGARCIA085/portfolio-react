@@ -10,7 +10,7 @@ import Filter from "./components/Filter/Filter";
 import Navbar from "./components/Navbar/Navbar";
 */
 
-
+import sc from "./images/sc.jpg";
 
 
 import Navbar from "./components/Navbar/Navbar";
@@ -49,7 +49,36 @@ function App() {
 const Home = () => {
   return (
     <div className="App">
-      This is my home page
+
+
+
+<h1><center><b><font color='red'>HOME</font></b></center></h1>
+            <hr></hr>
+
+<div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 offset-md-4">
+
+
+                  <center><img src={sc} alt="logo" width="40%"/></center>  
+
+                  
+      <br></br>
+      <br></br>
+      Hola! Me llamo Marcos. <br></br>
+      Soy un Ingeniero Eléctrico de Carmelo, Uruguay. <br></br>
+      Me dedico principalmente al desarrollo de software, trabajando más que nada en la parte del backend con distintos 
+      frameworks de Python (Fast API, Django, Web2py), bases de datos SQL y noSQL y cada tanto algo de frontend (React
+      o Angular).
+      Soy también un gran fan de la IA. <br></br> 
+      En mis ratos libres me gusta hacer deporte y mirar series (mis favoritas: spartacus, death note y big bang theory).
+      </div>
+      </div>
+</div>
+
+
+
+      
       <br></br>
     </div>
   );

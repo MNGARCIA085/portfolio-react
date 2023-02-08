@@ -16,7 +16,7 @@ const Footer = () => {
                                         className='me-4 text-reset'>
                                     <MDBIcon fab icon="linkedin text-primary" />
                                 </a>
-                                <a href='https://github.com/MNGARCIA085' target='_git' className='me-4 text-reset'>
+                                <a href='https://github.com/MNGARCIA085' target='_git' title='repos' className='me-4 text-reset'>
                                     <MDBIcon fab icon="github text-warning" />
                                 </a>
                 </div>

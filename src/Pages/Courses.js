@@ -105,7 +105,7 @@ const Courses = () => {
             
             <div class="row">
                 <div class="col-md-12">
-                    <b><center><h2><font color='red'>MY COURSES</font></h2></center></b>
+                    <b><center><h2><font color='red'>COURSES AND SPECIALIZATIONS</font></h2></center></b>
                     <hr></hr>
                 </div>
             </div>
